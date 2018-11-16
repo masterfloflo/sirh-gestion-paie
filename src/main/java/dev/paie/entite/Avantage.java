@@ -2,12 +2,20 @@ package dev.paie.entite;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name = "avantage")
 public class Avantage {
 
-	private Integer id;
-	private String code;
-	private String nom;
-	private BigDecimal montant;
+	@Id
+	@GeneratedValue private Integer id;
+	@Column private String code;
+	@Column private String nom;
+	@Column private BigDecimal montant;
 
 	public String getCode() {
 		return code;

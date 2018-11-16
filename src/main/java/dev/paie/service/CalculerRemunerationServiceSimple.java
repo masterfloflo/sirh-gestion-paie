@@ -19,7 +19,7 @@ public class CalculerRemunerationServiceSimple implements CalculerRemunerationSe
 		//SALAIRE_BRUT = SALAIRE_BASE + PRIME_EXCEPTIONNELLE
 		BigDecimal salaireBrut = salaireBase.add(bulletin1.getPrimeExceptionnelle());
 		//TOTAL_RETENUE_SALARIALE = SOMME(COTISATION_NON_IMPOSABLE.TAUX_SALARIAL*SALAIRE_BRUT)
-		BigDecimal totalRetenueSalariale = 
+		//BigDecimal totalRetenueSalariale = 
 		//TOTAL_COTISATIONS_PATRONALES = SOMME(COTISATION_NON_IMPOSABLE.TAUX_PATRONAL*SALAIRE_BRUT)
 
 		//NET_IMPOSABLE = SALAIRE_BRUT - TOTAL_RETENUE_SALARIALE
@@ -27,6 +27,7 @@ public class CalculerRemunerationServiceSimple implements CalculerRemunerationSe
 		//NET_A_PAYER = NET_IMPOSABLE - SOMME(COTISATION_IMPOSABLE.TAUX_SALARIAL*SALAIRE_BRUT)
 
 
+		
 		return null ;
 	}
 

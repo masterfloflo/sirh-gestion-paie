@@ -2,12 +2,21 @@ package dev.paie.entite;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "bulletin_salaire")
+
 public class BulletinSalaire {
 	
-	private Integer id;
-	private RemunerationEmploye remunerationEmploye;
-	private Periode periode;
-	private BigDecimal primeExceptionnelle;
+	@Id @GeneratedValue private Integer id;
+	@Column private RemunerationEmploye remunerationEmploye;
+	@Column private Periode periode;
+	@Column private BigDecimal primeExceptionnelle;
 	
 	public RemunerationEmploye getRemunerationEmploye() {
 		return remunerationEmploye;
