@@ -19,9 +19,9 @@ public class Cotisation {
 	private String code;
 	@Column
 	private String libelle;
-	@Column
+	@Column(name = "taux_salarial")
 	private BigDecimal tauxSalarial;
-	@Column
+	@Column(name = "taux_patronal")
 	private BigDecimal tauxPatronal;
 	@Column
 	private Boolean imposable = false;

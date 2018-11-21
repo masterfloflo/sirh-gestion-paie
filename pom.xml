@@ -13,6 +13,20 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+	
+	<build>
+		<finalName>paie</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 
 	<dependencyManagement>
 		<dependencies>
@@ -68,9 +82,39 @@
     <scope>runtime</scope>
 </dependency>
 <dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-java8</artifactId>
+    <version>5.1.0.Final</version>
+    <scope>runtime</scope>
+</dependency>
+<dependency>
     <groupId>org.springframework.data</groupId>
     <artifactId>spring-data-jpa</artifactId>
     <version>1.11.3.RELEASE</version>
+</dependency>
+
+<!-- Implémentation WebMVC -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+</dependency>
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.1.0</version>
+    <scope>provided</scope>
+</dependency>
+<dependency>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+
+<dependency>
+<groupId>taglibs</groupId>
+<artifactId>standard</artifactId>
+<version>1.1.2</version>
+<scope>compile</scope>
 </dependency>
 	</dependencies>
 </project>

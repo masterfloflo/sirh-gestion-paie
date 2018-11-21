@@ -15,7 +15,7 @@ public class Entreprise {
 	@Column private String denomination;
 	@Column private String adresse;
 	@Column private String urssaf;
-	@Column private String codeNaf;
+	@Column(name = "code_naf") private String codeNaf;
 	
 	public String getDenomination() {
 		return denomination;

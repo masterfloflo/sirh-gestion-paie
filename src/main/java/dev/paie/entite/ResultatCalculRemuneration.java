@@ -1,7 +1,15 @@
 package dev.paie.entite;
 
-public class ResultatCalculRemuneration {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "resultat_calcul_remuneration")
+public class ResultatCalculRemuneration {
+	@Id @GeneratedValue 
+	private String id;
 	private String salaireDeBase;
     private String salaireBrut;
     private String totalRetenueSalarial;

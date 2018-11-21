@@ -22,7 +22,6 @@ public class PaieUtils {
         df.setRoundingMode(RoundingMode.UP);
         df.setMinimumFractionDigits(2);
         df.setGroupingUsed(false);
-        return df.format(decimal);
-    }
+        return df.format(decimal); }
 
 }
