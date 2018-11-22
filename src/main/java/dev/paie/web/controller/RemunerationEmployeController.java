@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import dev.paie.entite.Matricule;
 import dev.paie.entite.RemunerationEmploye;
 import dev.paie.repository.EntrepriseRepository;
 import dev.paie.repository.GradeRepository;
@@ -41,12 +43,19 @@ public class RemunerationEmployeController {
     //creation d'un nouvel employe
     @RequestMapping(method = RequestMethod.POST, path = "/creeremp")
     public ModelAndView submit(@ModelAttribute("employe") RemunerationEmploye employe) {
+    	
     	LocalDateTime heure = LocalDateTime.now();
     	employe.setPr(heure);
     	
+    	RestTemplate rt = new RestTemplate();
+    	Matricule[] result = rt.getForObject("http://collegues-api.cleverapps.io/collegues?matricule="+employe.getMatricule(), Matricule[].class);
+    	if (result.length==0) // 
+    	{
+            return creerEmploye();
+    	}
     	remEmpRep.save(employe);
-
         return creerEmploye();
+
     }
     
     //liste des employes
