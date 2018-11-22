@@ -13,7 +13,7 @@
 
 		<c:out value="${bulletin.periode.dateDebutFin}"/>	
 		<c:out value="${bulletin.remunerationEmploye.matricule}" />
-	<!-- 			<c:out value="${calcul.salaireBrut}" />							 -->	
+	<!--	 			<c:out value="${calcul.salaireBrut}" />							 -->	
 
 		</li>
 	</c:forEach>
@@ -23,3 +23,4 @@
 </body>
 
 <%@ include file="../../footer.jsp"%>
+
