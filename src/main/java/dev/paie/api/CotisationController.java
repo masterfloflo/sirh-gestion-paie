@@ -33,7 +33,6 @@ public class CotisationController {
 
 	@RequestMapping(value = "/api/cotisations/{code}", method = RequestMethod.GET) // retourne un objet Cotisation à
 																					// partir du code fourni
-
 	public ResponseEntity<?> findCotisation(@PathVariable String code) {
 		Cotisation cotisa = this.cotisRepo.findByCode(code);
 		if (cotisa != null) {
